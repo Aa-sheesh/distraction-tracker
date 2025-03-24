@@ -19,7 +19,7 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
             const categories = { ...defaultCategories, ...storedCategories };
             const category = categories[activeTab] || "uncategorized";
             
-            fetch("http://localhost:5000/api/log-time", {
+            fetch("https://distraction-tracker.onrender.com/api/log-time", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ url: activeTab, category, duration }),
